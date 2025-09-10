@@ -23,21 +23,22 @@ This project was created as part of a technical assessment to showcase **clean c
 ## 📂 Project Structure
 
 PhotoCatalog.sln
-├─ PhotoCatalog.Core # Domain layer
-│ ├─ Entities # Domain models
-│ ├─ Interfaces # Contracts (repositories, UoW)
-│ ├─ Services # Application services
-│ └─ Contracts # DTOs and requests
-│
-├─ PhotoCatalog.Infrastructure # Data access layer
-│ ├─ Data # EF Core DbContext
-│ ├─ Repositories # Repository implementations
-│ └─ UnitOfWork.cs
-│
-└─ PhotoCatalog.Api # Web API
-├─ Controllers # REST endpoints
-├─ Program.cs # Composition root
-└─ appsettings.json
+
+- ├─ PhotoCatalog.Core # Domain layer
+- - │ ├─ Entities # Domain models
+- - │ ├─ Interfaces # Contracts (repositories, UoW)
+- - │ ├─ Services # Application services
+- - │ └─ Contracts # DTOs and requests
+- - │
+- ├─ PhotoCatalog.Infrastructure # Data access layer
+- - │ ├─ Data # EF Core DbContext
+- - │ ├─ Repositories # Repository implementations
+- - │ └─ UnitOfWork.cs
+- │
+- └─ PhotoCatalog.Api # Web API
+- - ├─ Controllers # REST endpoints
+- - ├─ Program.cs # Composition root
+- - └─ appsettings.json
 
 ---
 
@@ -94,15 +95,23 @@ Content-Type: application/json
 Delete a Photo
 DELETE /api/photos/1
 
-## ☁️ Deployment
+## 🧪 Demo Environment
 
-This project can be easily deployed to Azure App Service:
+The API is deployed to Azure App Service.  
+👉 Live Swagger: https://photocallsaal2025-gfg0d8dve3g6defh.westeurope-01.azurewebsites.net/swagger/index.html
 
-1. Publish from Visual Studio or CLI:
-   dotnet publish -c Release
-2. Create an Azure App Service (Linux) with a free tier plan.
-3. Deploy published files or use GitHub Actions CI/CD.
-4. Update connection string in appsettings.json or through Azure configuration.
+Some sample records are preloaded:
+
+- "Mountains"
+- "Portrait"
+
+You can test directly:
+
+- GET `/api/photos` → returns all photos
+- POST `/api/photos` → create your own entries
+- GET `/api/photos/{id}` → returns photo by id
+- PUT `/api/photos/{id}` → edits photo by id
+- DELETE `/api/photos/{id}` → delete photo by id
 
 ## ✅ Notes
 
