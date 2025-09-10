@@ -1,6 +1,5 @@
-using PhotoCatalog.Infrastructure;
 using PhotoCatalog.Core.Services;
-using PhotoCatalog.Core.Interfaces;
+using PhotoCatalog.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +18,8 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated();
 }
 
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.MapControllers();
 app.Run();
